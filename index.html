@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="is-loading">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#EDEEE5" />
+
+  <title>oh design — brand identity, web design &amp; motion, Prague</title>
+  <meta name="description" content="oh design is a design studio in Prague partnering with ambitious brands — brand identity, web design, motion design and photography." />
+  <meta name="author" content="Ondřej Hladík" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="oh design" />
+  <meta property="og:title" content="oh design — brand identity, web design &amp; motion, Prague" />
+  <meta property="og:description" content="A modern design studio partnering with ambitious brands to create distinctive digital experiences." />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <!-- fonts are self-hosted (fonts/) -->
+  <link rel="preload" href="fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/styles.css?v=5" />
+</head>
+
+<body>
+  <!-- everything marked [data-gl] is drawn here, then distorted (js/gl.js) -->
+  <canvas class="gl" aria-hidden="true"></canvas>
+
+  <!-- small mark, top right — links home -->
+  <a class="brand" href="#/" aria-label="oh design — home" data-brand data-gl-fade data-gl-z="5"></a>
+
+  <main>
+    <!-- LANDING — "what are you looking for?" (slide 3) -->
+    <section class="page page--fixed" data-page="picker" aria-label="Choose a service"></section>
+
+    <!-- one pitch page per service -->
+    <section class="page page--scroll" data-page="service"></section>
+
+    <!-- project detail, about, let's talk (scrolling pages) -->
+    <section class="page page--scroll" data-page="project"></section>
+    <section class="page page--scroll" data-page="about" aria-label="About"></section>
+    <section class="page page--scroll" data-page="talk" aria-label="Let's talk"></section>
+  </main>
+
+  <footer class="foot" data-foot data-gl-fade data-gl-z="5"></footer>
+
+  <!-- language + menu (top right) -->
+  <div class="lang" data-lang data-gl-z="5"></div>
+  <div class="menu" data-menu data-gl-fade data-gl-z="10">
+    <div class="menu__box" data-gl="box">
+      <span class="menu__line" data-gl="box"></span>
+      <span class="menu__line" data-gl="box"></span>
+      <nav class="menu__nav al-r" aria-label="Navigation" data-gl-inv="menu">
+        <span class="menu__hl" data-gl="box" data-gl-clip></span>
+      </nav>
+    </div>
+    <button class="menu__toggle" type="button" aria-label="Open menu" aria-expanded="false"></button>
+  </div>
+
+  <!-- page transition: orange curtain + scrambled title + counter -->
+  <div class="curtain" aria-hidden="true">
+    <svg class="curtain__svg" preserveAspectRatio="none"><path d=""/></svg>
+    <div class="curtain__stage">
+      <div class="curtain__media"><img alt="" /></div>
+      <div class="curtain__title"></div>
+    </div>
+    <div class="curtain__count">000</div>
+  </div>
+
+  <!-- custom cursor -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__label"></div>
+  </div>
+
+  <noscript>
+    <p style="position:fixed;left:24px;bottom:24px;max-width:36em;font:18px/1.3 sans-serif;color:#FA4432">
+      oh design — a design studio in Prague. Brand identity, web design, motion design and photography.
+      Write to <a href="mailto:ondrej@ohdesign.eu">ondrej@ohdesign.eu</a>.
+    </p>
+  </noscript>
+
+  <script src="js/data.js?v=5"></script>
+  <script src="js/dims.js?v=5"></script>
+  <script src="js/gl.js?v=5"></script>
+  <script src="js/app.js?v=5"></script>
+</body>
+</html>
